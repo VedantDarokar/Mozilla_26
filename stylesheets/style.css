@@ -131,10 +131,33 @@ section.revealed {
 
 .nav-links {
     display: flex;
+    width: 100%;
+    /* justify-content: center; Removed center to allow groups to stretch */
+    align-items: center;
+}
+
+.nav-group-left,
+.nav-group-right {
+    display: flex;
     gap: 2rem;
     align-items: center;
-    width: 100%;
-    justify-content: center;
+}
+
+/* Desktop Handling */
+@media (min-width: 1025px) {
+    .nav-group-left {
+        flex: 1;
+        justify-content: flex-end;
+        padding-right: 240px;
+        /* Increased Space for logo details */
+    }
+
+    .nav-group-right {
+        flex: 1;
+        justify-content: flex-start;
+        padding-left: 240px;
+        /* Increased Space for logo details */
+    }
 }
 
 /* On desktop, we want to skip the logo in the middle of the links list */
@@ -177,19 +200,21 @@ section.revealed {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    order: 0;
-    /* Keeps logo in its place in the flex container */
+    position: absolute;
+    left: 43%;
+    /* Moved more left */
+    transform: translateX(-50%);
+    pointer-events: none;
+    /* Let clicks pass through if needed, though logo might need clicks */
+}
+
+.brand-center * {
+    pointer-events: auto;
 }
 
 /* Ensure Logo is in the middle of the links */
-@media (min-width: 1025px) {
-
-    /* Push Mentors, Testimonials, Team to the right */
-    /* Home, About to the left */
-    .nav-item:nth-child(3) {
-        margin-left: 100px;
-    }
-}
+/* ensure logo stays in middle */
+/* Previous margin logic removed as we use flex groups now */
 
 .moz-logo {
     height: 45px;
@@ -274,16 +299,24 @@ section.revealed {
         padding: 0.5rem 1.5rem;
     }
 
-    .nav-links {
+    .nav-group-left,
+    .nav-group-right {
         gap: 1.2rem;
     }
 
-    .nav-item {
-        font-size: 1rem;
+    .nav-links {
+        justify-content: center;
+        gap: 1.2rem;
+        /* Add gap between groups for tablet */
     }
 
-    .nav-item:nth-child(3) {
-        margin-left: 0;
+    /* Remove padding for tablet as logo might move or scale */
+    .nav-group-left {
+        padding-right: 0;
+    }
+
+    .nav-group-right {
+        padding-left: 0;
     }
 }
 
@@ -345,6 +378,15 @@ section.revealed {
     .nav-links {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .nav-group-left,
+    .nav-group-right {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        justify-content: center;
+        padding: 0 !important;
     }
 
     .nav-item {
@@ -663,10 +705,11 @@ section.revealed {
     z-index: 10;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1025px) {
     .about-section {
-        padding: 80px 5% 60px 5%;
-        min-height: auto;
+        min-height: 100vh;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -804,6 +847,15 @@ section.revealed {
     .faculty-section {
         padding: 80px 5% 60px 5%;
         min-height: auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .faculty-section {
+        min-height: 100vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        justify-content: center;
     }
 }
 

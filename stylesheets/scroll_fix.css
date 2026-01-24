@@ -1,8 +1,9 @@
 /* Scroll To Top Button */
 .scroll-top-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 100px;
+    /* Moved up to avoid overlapping with social dock */
+    right: 40px;
     width: 50px;
     height: 50px;
     background: #00d5ff;
@@ -39,13 +40,12 @@
     stroke-width: 2.5px;
 }
 
-/* Adjust Social Dock to Left Side */
+/* Adjust Social Dock to Right Side */
 .social-dock {
-    left: 40px;
-    right: auto;
-    /* Move from right to left */
+    left: auto;
+    right: 40px;
+    /* Move back to right */
     bottom: 40px;
-    /* Adjust height to avoid footer overlap if needed */
 }
 
 /* Mobile responsive adjustments for docks */
