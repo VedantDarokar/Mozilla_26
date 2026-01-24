@@ -1,0 +1,61 @@
+/* Scroll To Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #00d5ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 213, 255, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: #00aadd;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 213, 255, 0.6);
+}
+
+.scroll-top-btn i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5px;
+}
+
+/* Adjust Social Dock to Left Side */
+.social-dock {
+    left: 40px;
+    right: auto;
+    /* Move from right to left */
+    bottom: 40px;
+    /* Adjust height to avoid footer overlap if needed */
+}
+
+/* Mobile responsive adjustments for docks */
+@media (max-width: 768px) {
+    .social-dock {
+        display: none;
+    }
+
+    .side-dock {
+        /* Ensure the center dock doesn't overlap the left dock */
+        z-index: 95;
+    }
+}

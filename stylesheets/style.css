@@ -1,3 +1,5 @@
+@import url('scroll_fix.css');
+
 /* Global Reset */
 * {
     margin: 0;
@@ -88,7 +90,8 @@ section.revealed {
     align-items: center;
     padding-bottom: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    z-index: 50;
+    z-index: 102;
+    /* Increased to be above everything */
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-top: none;
 }
@@ -287,8 +290,19 @@ section.revealed {
 @media (max-width: 768px) {
     .logo-badge {
         left: 20px;
-        width: 70px;
-        height: 80px;
+        top: 90px;
+        /* Moved below the navbar */
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        /* Make it circular since it's detached */
+        padding: 5px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        /* Restore top border */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0;
     }
 
     .logo-badge img {
@@ -363,6 +377,10 @@ section.revealed {
 
     .icon-box {
         padding: 6px;
+    }
+
+    .main-navbar .moz-logo {
+        height: 35px;
     }
 }
 
@@ -486,6 +504,12 @@ section.revealed {
     right: 0;
 }
 
+/* --- Footer --- */
+.main-footer {
+    padding-bottom: 100px;
+    /* Extra padding for mobile bottom docks */
+}
+
 /* --- Animations --- */
 
 @keyframes fadeInUp {
@@ -551,18 +575,39 @@ section.revealed {
     }
 }
 
+/* .social-dock rule commented out as it is overridden in scroll_fix.css */
+/* 
 .social-dock {
     position: absolute;
     right: 40px;
     bottom: 25px;
     z-index: 100;
-    /* High z-index to ensure visibility */
-
+   
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1.5rem;
 
+    background: linear-gradient(90deg, rgba(8, 30, 56, 0.7) 0%, rgba(2, 12, 24, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+} 
+*/
+/* Re-declaring base styles for social-dock that were not position-dependent */
+.social-dock {
+    position: fixed;
+    /* Changed from absolute to fixed to stay visible on scroll if desired, or absolute depending on section */
+    /* By default it was absolute in the hero section. If the user wants it to be a persistent "bar", fixed is better. 
+       Use fixed to ensure it stays on screen. */
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
     background: linear-gradient(90deg, rgba(8, 30, 56, 0.7) 0%, rgba(2, 12, 24, 0.8) 100%);
     backdrop-filter: blur(10px);
     padding: 0.8rem 1.5rem;
@@ -601,7 +646,8 @@ section.revealed {
         right: 50%;
         transform: translateX(50%);
         bottom: 10px;
-        /* animation: fadeInUpMobile 0.8s ease-out forwards 1s; */
+        display: none;
+        /* Hide on mobile as requested */
     }
 }
 
@@ -609,15 +655,19 @@ section.revealed {
 .about-section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 120px 5% 80px 10%;
-    /* Increased left padding */
     background: url('../assets/background/imges/bg1.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 80px 5% 60px 5%;
+        min-height: auto;
+    }
 }
 
 /* Dark overlay for readability */
@@ -742,14 +792,19 @@ section.revealed {
 .faculty-section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 100px 5% 100px 10%;
-    /* Increased left padding */
     background: url('../assets/background/imges/bg2.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .faculty-section {
+        padding: 80px 5% 60px 5%;
+        min-height: auto;
+    }
 }
 
 /* Dark overlay for faculty section */
@@ -1436,7 +1491,7 @@ section.revealed {
     }
 
     .main-footer {
-        padding: 60px 5% 30px;
+        padding: 60px 5% 120px;
     }
 }
 

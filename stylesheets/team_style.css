@@ -7,7 +7,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .full-team-section {
+        padding: 8rem 5% 6rem 5%;
+    }
 }
 
 .full-team-section::after {
@@ -51,11 +57,28 @@
     box-shadow: 0 0 20px rgba(0, 213, 255, 0.4);
 }
 
+@media (max-width: 768px) {
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
 .section-title {
     margin-bottom: 4rem;
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 /* Vertical Team Card Override */

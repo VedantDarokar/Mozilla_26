@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
             loader.style.opacity = '0';
             loader.style.visibility = 'hidden';
             document.body.classList.remove('loading');
-        }, 4000); // 4 second display time
+        }, 3000); // 4 second display time
     }
 });
 
@@ -113,5 +113,27 @@ if (mozLogo) {
     mozLogo.style.cursor = 'pointer';
     mozLogo.addEventListener('click', () => {
         window.location.reload();
+    });
+}
+
+// Scroll To Top Button Logic
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+            scrollTopBtn.style.pointerEvents = 'auto';
+        } else {
+            scrollTopBtn.classList.remove('visible');
+            scrollTopBtn.style.pointerEvents = 'none';
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 }
