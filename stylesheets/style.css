@@ -344,6 +344,7 @@ section.revealed {
 
     .mobile-toggle {
         display: block;
+        cursor: pointer;
     }
 
     .main-navbar {
@@ -356,10 +357,20 @@ section.revealed {
         border-radius: 12px;
     }
 
+    /* Reset Brand Position for Mobile (Logo Left, Burger Right) */
+    .brand-center {
+        position: static;
+        transform: none;
+        left: auto;
+        width: auto;
+        padding: 0;
+        pointer-events: auto;
+    }
+
     .mobile-menu-container {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
         background: rgba(2, 12, 24, 0.98);
@@ -369,10 +380,15 @@ section.revealed {
         align-items: center;
         transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
         z-index: 90;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
     }
 
     .mobile-menu-container.active {
-        right: 0;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links {
@@ -423,6 +439,7 @@ section.revealed {
 
     .main-navbar .moz-logo {
         height: 35px;
+        margin-bottom: 0;
     }
 }
 
@@ -613,7 +630,9 @@ section.revealed {
 
     .hero-subtitle {
         font-size: 1rem;
-        width: 80%;
+        width: 100%;
+        white-space: normal;
+        animation: fadeInUp 0.8s forwards 0.6s, pulseGlow 3s ease-in-out infinite 2s;
     }
 }
 
@@ -816,6 +835,10 @@ section.revealed {
 }
 
 @media (max-width: 1024px) {
+    .about-section {
+        padding: 80px 5%;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
