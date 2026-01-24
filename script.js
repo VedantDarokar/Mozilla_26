@@ -7,15 +7,41 @@ window.addEventListener('load', () => {
             loader.style.opacity = '0';
             loader.style.visibility = 'hidden';
             document.body.classList.remove('loading');
-        }, 4000); // 2 second display time
+        }, 4000); // 4 second display time
     }
 });
+
+// Mobile Menu Toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+
+        const icon = mobileToggle.querySelector('i');
+        if (mobileMenu.classList.contains('active')) {
+            icon.setAttribute('data-lucide', 'x');
+        } else {
+            icon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+    });
+}
 
 // Smooth Scrolling Logic
 document.querySelectorAll('.nav-item, .dock-item, .nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
+        // Close mobile menu when link is clicked
+        if (mobileMenu) mobileMenu.classList.remove('active');
+        const icon = mobileToggle?.querySelector('i');
+        if (icon) {
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
 
+
+        const href = this.getAttribute('href');
         if (href.startsWith('#') && href.length > 1) {
             e.preventDefault();
             const targetId = href.substring(1);
