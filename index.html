@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mozilla Community SSGMCE</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="loading">
+    <!-- Loader Overlay -->
+    <div id="loader">
+        <video autoplay muted loop id="loader-video">
+            <source src="assets/loder.mp4" type="video/mp4">
+        </video>
+        <div class="loader-content">
+            <h1>Welcome to Mozilla Open Source Community</h1>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero-section">
+            <!-- Background Layer -->
+            <div class="bg-layer">
+                <video autoplay muted loop playsinline class="bg-video">
+                    <source src="assets/background/videos/homebg.mp4" type="video/mp4">
+                </video>
+                <!-- Blue Overlay for the atmosphere -->
+                <div class="gradient-overlay"></div>
+            </div>
+
+            <!-- Top Left Logo Badge -->
+            <div class="logo-badge">
+                <img src="assets/logos/SSGMCE-Vertical-Colour.png" alt="SSGMCE Logo">
+            </div>
+
+            <!-- Main Content Area (Visual Only) -->
+            <main class="main-content">
+                <div class="hero-text-container">
+                    <h2 class="welcome-label">Welcome to</h2>
+                    <h1 class="hero-title">
+                        <span class="highlight-moz">Mozilla</span> Open Source Community, SSGMCE
+                    </h1>
+                    <p class="hero-subtitle">Department of Information Technology</p>
+                </div>
+            </main>
+
+            <!-- Right Horizontal Social Dock -->
+            <div class="social-dock">
+                <a href="#" class="social-item"><i data-lucide="instagram"></i></a>
+                <a href="#" class="social-item"><i data-lucide="linkedin"></i></a>
+                <a href="#" class="social-item"><i data-lucide="link"></i></a>
+            </div>
+        </section>
+
+        <!-- Center Floating Navbar -->
+        <nav class="main-navbar">
+            <div class="nav-links left">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#about" class="nav-item">About</a>
+            </div>
+
+            <div class="brand-center">
+                <img src="assets/logos/mozilla-logo2.png" alt="Mozilla" class="moz-logo">
+            </div>
+
+            <div class="nav-links right">
+                <a href="#faculty" class="nav-item">Mentors</a>
+                <a href="#testimonials" class="nav-item">Testimonials</a>
+                <a href="#team" class="nav-item">Team</a>
+            </div>
+        </nav>
+
+        <!-- Left Vertical Dock -->
+        <aside class="side-dock">
+            <a href="#events" class="dock-item">
+                <div class="icon-box">
+                    <i data-lucide="star"></i>
+                </div>
+                <span>Events</span>
+            </a>
+            <a href="gallery.html" class="dock-item">
+                <div class="icon-box">
+                    <i data-lucide="image"></i>
+                </div>
+                <span>Gallery</span>
+            </a>
+            <a href="contact.html" class="dock-item">
+                <div class="icon-box">
+                    <i data-lucide="message-circle-question"></i>
+                </div>
+                <span>Contact</span>
+            </a>
+        </aside>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-text-content">
+                    <h2>About Us</h2>
+                    <p>The Mozilla Open Source Community at SSGMCE is a vibrant student-led community dedicated to
+                        fostering innovation through collaborative open-source development.</p>
+                    <p>Located in the Department of Information Technology, we bridge the gap between academic theory
+                        and industry practice by working on real-world projects and participating in global open-source
+                        initiatives.</p>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <i data-lucide="users"></i>
+                        <h3>Community first</h3>
+                        <p>Building a supportive environment where every developer can thrive and share knowledge.</p>
+                    </div>
+                    <div class="about-card">
+                        <i data-lucide="code-2"></i>
+                        <h3>Open Source</h3>
+                        <p>Contributing to the global ecosystem by building software that remains open and accessible to
+                            all.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Section -->
+        <section id="faculty" class="faculty-section">
+            <h2 class="section-title">Our Mentors</h2>
+            <div class="faculty-container">
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="assets/placeholder.png" alt="Dr. S.B.Somani">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr. S.B.Somani</h3>
+                        <p class="role">Principal</p>
+                    </div>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="assets/placeholder.png" alt="Dr. S.D. Padiya">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr. S.D. Padiya</h3>
+                        <p class="role">Head of Information Technology Department</p>
+                    </div>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="assets/placeholder.png" alt="Prof. S.N.Khandare">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Prof. S.N.Khandare</h3>
+                        <p class="role">Faculty Advisor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="assets/placeholder.png" alt="Amit Molke">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>Amit Molke</h3>
+                    </div>
+                    <div class="testimonial-message">
+                        This platform has truly exceeded my expectations. Highly recommended!
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="assets/placeholder.png" alt="Ruchika Bhagat">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>Ruchika Bhagat</h3>
+                    </div>
+                    <div class="testimonial-message">
+                        This platform has truly exceeded my expectations. Highly recommended!
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="assets/placeholder.png" alt="Ishwar Sharma">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>Ishwar Sharma</h3>
+                    </div>
+                    <div class="testimonial-message">
+                        This platform has truly exceeded my expectations. Highly recommended!
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="assets/placeholder.png" alt="Garima Agrawal">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>Garima Agrawal</h3>
+                    </div>
+                    <div class="testimonial-message">
+                        This platform has truly exceeded my expectations. Highly recommended!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-container">
+                <!-- Card 1 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Ashish Ingle">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Ashish Ingle</h3>
+                        <p class="role">Team Lead</p>
+                        <p class="dept">Information Technology</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Divya Sangle">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Divya Sangle</h3>
+                        <p class="role">Associative Team Lead</p>
+                        <p class="dept">Information Technology</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Vedant Darokar">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Vedant Darokar</h3>
+                        <p class="role">Secretary</p>
+                        <p class="dept">Information Technology</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Shreya Kale">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Shreya Kale</h3>
+                        <p class="role">Joint Secretary</p>
+                        <p class="dept">Information Technology</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Piyush Dawange">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Piyush Dawange</h3>
+                        <p class="role">Treasurer</p>
+                        <p class="dept">Information Technology</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Ebaad Rehman">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Ebaad Rehman</h3>
+                        <p class="role">Technical Head</p>
+                        <p class="dept">Electronics and Telecommunication</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="team-card">
+                    <div class="team-card-left">
+                        <img src="assets/placeholder.png" alt="Yash Bari">
+                    </div>
+                    <div class="team-card-right">
+                        <h3>Yash Bari</h3>
+                        <p class="role">Management Head</p>
+                        <p class="dept">Information Technology</p>
+                        <div class="team-socials">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-container">
+                <a href="team.html" class="view-more-btn">View More Team Members</a>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="events-section">
+            <h2 class="section-title">Events</h2>
+            <div class="events-slider">
+                <div class="events-track">
+                    <!-- Events Set 1 -->
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/HacktoberFest.jpeg" alt="HacktoberFest">
+                        </div>
+                        <div class="event-info">
+                            <h3>HacktoberFest</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/wordpress.png" alt="WordPress Workshop">
+                        </div>
+                        <div class="event-info">
+                            <h3>WordPress Workshop</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/figmA.png" alt="Figma Design">
+                        </div>
+                        <div class="event-info">
+                            <h3>Figma Design</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/github.png" alt="GitHub Training">
+                        </div>
+                        <div class="event-info">
+                            <h3>GitHub Training</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/photoshop.png" alt="Photoshop Mastery">
+                        </div>
+                        <div class="event-info">
+                            <h3>Photoshop Mastery</h3>
+                        </div>
+                    </div>
+                    <!-- Duplicate Set for Infinity -->
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/HacktoberFest.jpeg" alt="HacktoberFest">
+                        </div>
+                        <div class="event-info">
+                            <h3>HacktoberFest</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/wordpress.png" alt="WordPress Workshop">
+                        </div>
+                        <div class="event-info">
+                            <h3>WordPress Workshop</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/figmA.png" alt="Figma Design">
+                        </div>
+                        <div class="event-info">
+                            <h3>Figma Design</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/github.png" alt="GitHub Training">
+                        </div>
+                        <div class="event-info">
+                            <h3>GitHub Training</h3>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="assets/events/photoshop.png" alt="Photoshop Mastery">
+                        </div>
+                        <div class="event-info">
+                            <h3>Photoshop Mastery</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/logos/mozilla-logo2.png" alt="Mozilla" class="footer-logo">
+                <p>Empowering open source enthusiasts at SSGMCE. Join us in building a better, more open web through
+                    collaboration and innovation.</p>
+                <div class="footer-socials">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="github"></i></a>
+                    <a href="#"><i data-lucide="globe"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <div class="contact-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>SSGMCE, Shegaon, Maharashtra 444203</span>
+                </div>
+                <div class="contact-info-item">
+                    <i data-lucide="mail"></i>
+                    <span>mozilla@ssgmce.ac.in</span>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Mozilla Manifesto</a></li>
+                    <li><a href="#">Open Source Docs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="highlight">Mozilla SSGMCE</span>, All Rights Reserved.</p>
+            <p>Developed by <a href="https://www.linkedin.com/in/vedant-darokar-3241a3286/" target="_blank"
+                    style="text-decoration: none;"><span class="highlight">Vedant Darokar</span></a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mozilla Community SSGMCE</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/contact_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <a href="index.html" class="back-btn">
+        <i data-lucide="arrow-left"></i> Back to Home
+    </a>
+
+    <section class="contact-hero revealed">
+        <h1 class="section-title main-title">Contact Us</h1>
+        <p class="section-subtitle">If You Have Any Query, Please Contact Us</p>
+
+        <div class="contact-container">
+            <!-- Left: Google Map -->
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.2671154093587!2d76.67379921590083!3d20.780478763745705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd7457296aaba57%3A0xa9f05c70098ee6c7!2sShri%20Sant%20Gajanan%20Maharaj%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1680666196862!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="contact-form-box">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Your Name :</label>
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email :</label>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject :</label>
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message :</label>
+                        <textarea placeholder="Leave a message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="send-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/logos/mozilla-logo2.png" alt="Mozilla" class="footer-logo">
+                <p>Empowering open source enthusiasts at SSGMCE. Join us in building a better, more open web through
+                    collaboration and innovation.</p>
+                <div class="footer-socials">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="github"></i></a>
+                    <a href="#"><i data-lucide="globe"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <div class="contact-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>SSGMCE, Shegaon, Maharashtra 444203</span>
+                </div>
+                <div class="contact-info-item">
+                    <i data-lucide="mail"></i>
+                    <span>mozilla@ssgmce.ac.in</span>
+                </div>
+                <div class="contact-info-item">
+                    <i data-lucide="phone"></i>
+                    <span>+91 12345 67890</span>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Mozilla Manifesto</a></li>
+                    <li><a href="#">Open Source Docs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="highlight">Mozilla SSGMCE</span>, All Rights Reserved.</p>
+            <p>Developed by <a href="https://www.linkedin.com/in/vedant-darokar-3241a3286/" target="_blank"
+                    style="text-decoration: none;"><span class="highlight">Vedant Darokar</span></a></p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Scroll to top logic
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+        scrollTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+
+</html>
