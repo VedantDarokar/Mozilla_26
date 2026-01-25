@@ -75,6 +75,20 @@
     margin-top: 2rem;
 }
 
+.gallery-item.large {
+    grid-column: 1 / -1;
+    height: auto;
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 250px;
+    }
+}
+
 .gallery-item {
     position: relative;
     border-radius: 20px;
