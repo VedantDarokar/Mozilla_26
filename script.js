@@ -3,11 +3,23 @@
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     if (loader) {
-        setTimeout(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const skipLoader = urlParams.get('noLoader') === 'true';
+
+        if (skipLoader) {
             loader.style.opacity = '0';
             loader.style.visibility = 'hidden';
             document.body.classList.remove('loading');
-        }, 3000); // 4 second display time
+            // Remove the query param from URL without refreshing
+            const newUrl = window.location.pathname;
+            window.history.replaceState({}, document.title, newUrl);
+        } else {
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                document.body.classList.remove('loading');
+            }, 3000); // 3 second display time
+        }
     }
 });
 

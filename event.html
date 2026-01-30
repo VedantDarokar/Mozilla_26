@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Mozilla Open Source Community</title>
+    <link rel="icon" href="assets/logos/SSGMCE-Vertical-Colour.png" type="image/png">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/team_style.css"> <!-- Reusing for consistent layout -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="stylesheets/event_style.css">
+</head>
+
+<body>
+    <!-- Persistent Background -->
+    <div class="bg-layer" style="position: fixed; z-index: -1;">
+        <div class="gradient-overlay"></div>
+        <!-- You could add a video background here if desired, or just use the style.css body bg -->
+    </div>
+
+    <a href="index.html?noLoader=true" class="back-btn">
+        <i data-lucide="arrow-left"></i> Back to Home
+    </a>
+
+    <section class="event-detail-section revealed">
+        <div id="loading-msg" style="text-align: center; font-size: 1.5rem; margin-top: 100px;">
+            Loading Event Details...
+        </div>
+
+        <div id="error-msg" style="display: none; text-align: center; margin-top: 100px; color: #ff512f;">
+            <h2>Oops!</h2>
+            <p id="error-text">Something went wrong.</p>
+            <a href="index.html" style="color: #00d5ff; margin-top: 20px; display: inline-block;">Return Home</a>
+        </div>
+
+        <div id="event-content" class="event-layout" style="display: none;">
+            <div class="event-header">
+                <div class="event-poster-wrapper">
+                    <img id="e-poster" src="" alt="Event Poster">
+                </div>
+                <div class="event-info-wrapper">
+                    <h1 id="e-title" class="event-title">Event Name</h1>
+                    <p id="e-desc" class="event-desc">Description goes here...</p>
+                </div>
+            </div>
+
+            <div id="gallery-container" class="gallery-wrapper" style="display: none;">
+                <h2 class="gallery-title">Event Gallery</h2>
+                <div class="event-gallery-grid" id="e-gallery">
+                    <!-- Images go here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/logos/mozilla-logo2.png" alt="Mozilla" class="footer-logo">
+                <p>Empowering open source enthusiasts at SSGMCE. Join us in building a better, more open web through
+                    collaboration and innovation.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/mozillassgmce?igsh=MWoxMXB5bmV5cWVmYQ==" target="_blank"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/mozilla-open-source-community-ssgmce/" target="_blank"><i
+                            data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="github"></i></a>
+                    <a href="#"><i data-lucide="globe"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <div class="contact-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>SSGMCE, Shegaon, Maharashtra 444203</span>
+                </div>
+                <div class="contact-info-item">
+                    <i data-lucide="mail"></i>
+                    <span>mozilla@ssgmce.ac.in</span>
+                </div>
+                <div class="contact-info-item">
+                    <i data-lucide="phone"></i>
+                    <span>+91 12345 67890</span>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Mozilla Manifesto</a></li>
+                    <li><a href="#">Open Source Docs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="highlight">Mozilla SSGMCE</span>, All Rights Reserved.</p>
+            <p>Developed by <a href="https://www.linkedin.com/in/vedant-darokar-3241a3286/" target="_blank"
+                    style="text-decoration: none;"><span class="highlight">Vedant Darokar</span></a></p>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="eventsData.js"></script>
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingMsg = document.getElementById('loading-msg');
+            const errorMsg = document.getElementById('error-msg');
+            const errorText = document.getElementById('error-text');
+            const eventContent = document.getElementById('event-content');
+
+            try {
+                // Parse URL Param
+                const urlParams = new URLSearchParams(window.location.search);
+                const eventId = urlParams.get('id');
+
+                if (!window.eventsData) {
+                    throw new Error("Data file failed to load.");
+                }
+
+                if (!eventId || !window.eventsData[eventId]) {
+                    if (!eventId) throw new Error("No event ID provided in URL.");
+                    throw new Error(`Event '${eventId}' not found in database.`);
+                }
+
+                const data = window.eventsData[eventId];
+
+                // Populate Content
+                document.title = data.title + " - Mozilla Community";
+                document.getElementById('e-title').textContent = data.title;
+                document.getElementById('e-desc').innerHTML = data.description; // Changed to innerHTML for formatting
+
+                const poster = document.getElementById('e-poster');
+                poster.src = data.poster;
+                poster.alt = data.title;
+                poster.onerror = () => { poster.src = 'assets/logos/SSGMCE-Vertical-Colour.png'; }; // Fallback
+
+                // Gallery
+                if (data.gallery && data.gallery.length > 0) {
+                    document.getElementById('gallery-container').style.display = 'block';
+                    const galleryGrid = document.getElementById('e-gallery');
+                    galleryGrid.innerHTML = '';
+
+                    data.gallery.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.className = 'event-gallery-img';
+                        img.alt = 'Gallery Image';
+
+                        // Click to view large (simple implementation)
+                        img.onclick = () => { window.open(src, '_blank'); };
+
+                        galleryGrid.appendChild(img);
+                    });
+                } else {
+                    document.getElementById('gallery-container').style.display = 'none';
+                }
+
+                // Show Content
+                loadingMsg.style.display = 'none';
+                eventContent.style.display = 'block';
+
+            } catch (err) {
+                console.error(err);
+                loadingMsg.style.display = 'none';
+                errorMsg.style.display = 'block';
+                errorText.textContent = err.message;
+            }
+        });
+    </script>
+</body>
+
+</html>
